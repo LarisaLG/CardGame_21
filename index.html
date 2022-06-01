@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Game 21</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="game-area">
+        <!-- displays the number of Dealer's points on playing cards in the game  -->
+        <h2>Dealer: <span id="dealer-scores"></span></h2>
+        <!--  shows the playing cards obtained in the game -->
+        <div id="dealer-cards">
+            <img id="hidden" src="img/back.png">
+            <img src="img/2-clubs.png">
+        </div>
+        <!-- displays the number of Player's points on playing cards in the game  -->
+        <h2>You: <span id="player-scores"></span></h2>
+        <!--  shows the Player's playing cards received in the game -->
+        <div id="player-cards"></div>
+
+        <div class="game-controls">
+            <button id="hit">Hit me!</button>
+            <button id="stay">Stay!</button>
+            <p id="results"></p>
+        </div>
+
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
