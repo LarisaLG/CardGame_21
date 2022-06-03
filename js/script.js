@@ -51,7 +51,39 @@ function startGame() {
     console.log(hidden);
     console.log(dealerScores);
 
+// check if dealer's scores not exceed 17
+    while (dealerScores < 17) {
+    //create img tag
+    let cardImg = document.createElement("img");
+    //get source for img tag
+    let card = deck.pop();
+    cardImg.src = "img/" + card + ".png";
+    dealerScores += getValue(card);
+    dealerAceCount += checkAce(card);
+    document.getElementById("dealer-cards").append(cardImg);
 }
+    console.log(dealerScores);
+
+//give first 2 cards for player
+    for (let i = 0; i < 2; i++) {
+    //create img tag
+    let cardImg = document.createElement("img");
+    let card = deck.pop();
+    cardImg.src = "img/" + card + ".png";
+    playerScores += getValue(card);
+    
+    document.getElementById("player-cards").append(cardImg);
+
+}
+console.log(playerScores);
+//add an event listener to the button 'Hit me !' 
+document.getElementById(hit).addEventListener('click', hit);
+
+//add an event listener to the button 'Stay!' 
+document.getElementById(stay).addEventListener('click', stay);
+
+}
+
 
 
 //function checks if card contains digits or numbers and return card numeric value
