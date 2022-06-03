@@ -10,6 +10,9 @@ let deck;
 let canHit = true; //allows the player to draw cards while scores <=21
 
 window.onload = function () {
+    createCards();
+    shuffleCards();
+    startGame();
 
 }
 
@@ -26,5 +29,43 @@ function createCards() {
             deck.push(values[v] + "-" + suits[s]);
         }
     }
-    console.log(deck);
+    //console.log(deck);
+}
+
+//shuffle the cards, sorting an Array in Random Order 
+//(https://www.w3schools.com/js/js_array_sort.asp)
+function shuffleCards() {
+    deck = deck.sort(function() {
+        return 0.5 - Math.random()
+    });
+    // console.log("After shuffle " + deck);
+}
+
+//dealing the cards to computer and player
+function startGame() {
+    //get card from end of card array
+    hidden = deck.pop();
+    //get the value of the card and add it to the points
+    dealerScores += getValue(hidden);
+  
+    console.log(hidden);
+    console.log(dealerScores);
+
+}
+
+
+//function checks if card contains digits or numbers and return card numeric value
+function getValue(card) {
+    let number = card.split("-"); // got array  from card 9-H => [9, H]
+    let value = number[0];
+    //check if card contains digits or numbers and return card value
+    if (isNaN(value)) {
+        if (value == "A") {
+            return 11;
+        }
+        //all cards with image (J, Q, K) equals 10, except Ace
+        return 10;
+    }
+    //if card value have digit returns its value
+    return parseInt(value);
 }
