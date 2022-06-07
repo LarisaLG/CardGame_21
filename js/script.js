@@ -47,6 +47,7 @@ function startGame() {
     hidden = deck.pop();
     //get the value of the card and add it to the points
     dealerScores += getValue(hidden);
+    dealerAceCount += checkAce(hidden);
   
     console.log(hidden);
     console.log(dealerScores);
@@ -71,7 +72,7 @@ function startGame() {
     let card = deck.pop();
     cardImg.src = "img/" + card + ".png";
     playerScores += getValue(card);
-    
+    playerAceCount += checkAce(card);
     document.getElementById("player-cards").append(cardImg);
 
 }
@@ -100,4 +101,13 @@ function getValue(card) {
     }
     //if card value have digit returns its value
     return parseInt(value);
+}
+
+// check how many Aces are in hand
+function checkAce(row) {
+    if (row[0] === "A") {
+        return 1;
+    } else {
+        return 0;
+    }
 }
