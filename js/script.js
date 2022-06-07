@@ -78,10 +78,10 @@ function startGame() {
 }
 console.log(playerScores);
 //add an event listener to the button 'Hit me !' 
-document.getElementById(hit).addEventListener('click', hit);
+document.getElementById("hit").addEventListener('click', hit);
 
 //add an event listener to the button 'Stay!' 
-document.getElementById(stay).addEventListener('click', stay);
+document.getElementById("stay").addEventListener('click', stay);
 
 }
 
