@@ -111,3 +111,67 @@ function checkAce(row) {
         return 0;
     }
 }
+
+//draw cards for the player
+function hit() {
+    if (!canHit) {
+
+        return;
+    }
+
+    //create img tag
+    let cardImg = document.createElement("img");
+    let card = deck.pop();
+    cardImg.src = "img/" + card + ".png";
+    playerScores += getValue(card);
+    playerAceCount += checkAce(card);
+    document.getElementById("player-cards").append(cardImg);
+
+    //checks if scores sum is >21 and stops to draw cards
+    if (reduceAce(playerScores, playerAceCount) > 21) {
+        canHit = false;
+    }
+}
+
+//reduce Ace score from 11 to 1
+function reduceAce(playerScores, playerAceCount) {
+    while (playerScores > 21 && playerAceCount > 0) {
+        playerScores -= 10;
+        playerAceCount -= 1;
+
+    }
+    return playerScores;
+}
+
+
+function stay() {
+    dealerScores = reduceAce(dealerScores, dealerAceCount);
+    playerScores = reduceAce(playerScores, playerAceCount);
+
+    canHit = false;
+    document.getElementById("hidden").src = "img/" + hidden + ".png";
+
+    let message = "";
+    if (playerScores > 21) {
+        message = "You Lose!";
+    } else if (dealerScores > 21) {
+        message = "You Win!";
+    }
+    //if both player and dealer has <= 21 scores
+    else if (playerScores == dealerScores) {
+        message = "Tie!";
+    } else if (playerScores > dealerScores) {
+        message = "You Win!";
+    } else if (playerScores < dealerScores) {
+        message = "You Lose!";
+    }
+    document.getElementById('results').innerHTML = message;
+    //console.log("MSG " + message);
+    document.getElementById("dealer-scores").innerHTML = dealerScores;
+    //console.log("MSG dealer" + dealerScores);
+    document.getElementById("player-scores").innerHTML = playerScores;
+    //console.log("MSG player " + playerScores);
+
+
+}
+
