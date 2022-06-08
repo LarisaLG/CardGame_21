@@ -119,20 +119,62 @@ body {
     cursor: pointer;
 }
 
+/***  Game area  ***/
+.game-area {
+    /* background-color: #0e2978;  */
+    width: 75%;
+    margin: 20px auto;
+    padding: 20px;
+    /* flex-flow: column; */
+    /* align-items: center; */
+    /* align-content: flex-end; */
+}
 
+#hide,
+#invisible {
+    display: none;
+}
 
-
+h2 {
+    margin-bottom: 1em;
+    text-shadow: 1px 1px 15px #f2c609;
+    color: #f2c609;
+    /* background: #f56f06; */
+}
 
 #dealer-cards img,
 #player-cards img {
     height: 175px;
     width: 125px;
-    margin: 2px;
+    margin: 5px;
 }
 
+#results {
+    font-size: 2.5em;
+    text-shadow: 2px 3px 5px red;
+    margin: 1em 0;
+}
+
+/* buttons on the playing field */
 #hit,
 #stay {
-    width: 100px;
-    height: 50px;
-    font-size: 1.2rem;
+    width: 7em;
+    height: 3em;
+    font-size: 1.5rem;
+    margin: 20px 5px 20px;
+    color: #ffffff;
+    text-shadow: 2px 2px 3px #272625;
+    padding: 5px;
+    box-shadow: 3px 3px 5px #1e1d1d;
+    border-radius: 11px;
+    border: 5px double #f2c609;
+    background: #f56f06;
+}
+
+#hit:hover,
+#stay:hover,
+.info-btn:hover {
+    color: #d0cfec;
+    background: #f8831d;
+    background: linear-gradient(to top, #f8831d, #f9c011);
 }
