@@ -1,8 +1,72 @@
+/*** General styles  ***/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-
+    color: #f2c609;
 }
+
+.container {
+    background-color: #0e2978;
+    width: 75%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/*** Game first screen ***/
+#welcome {
+    width: 55%;
+    margin: 0 auto;
+    padding: 20px;
+    height: 675px;
+    display: block;
+    text-align: center;
+}
+
+.game-title {
+    text-align: center;
+    margin-top: 10em;
+    font-size: 2.5em;
+    text-shadow: 2px 3px 5px red;
+    margin-top: 1.2em;
+    padding: 25px 40px;
+}
+
+/* first screen image*/
+#ace {
+    width: 20em;
+    height: 16em;
+    margin: 2em auto;
+    display: block;
+}
+
+/* button Start Game! */
+#new-game {
+    width: 200px;
+    height: 75px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 1.5rem 0.5rem;
+    color: #fff;
+    text-shadow: 2px 2px 3px #272625;
+    padding: 15px 25px;
+    box-shadow: 3px 3px 5px #1e1d1d;
+    border-radius: 11px;
+    border: 5px double #f2c609;
+    background: #f56f06;
+}
+
+#new-game:hover {
+    color: #a0fdfd;
+    background: #f8831d;
+    background: linear-gradient(to top, #f8831d, #f9c011);
+}
+
 
 #dealer-cards img,
 #player-cards img {

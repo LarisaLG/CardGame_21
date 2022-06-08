@@ -10,6 +10,31 @@
 </head>
 
 <body>
+     <main class="container">
+         <!-- Button for Modal box -->
+         <button class="info-btn" id="info-btn" type="button"
+             aria-label="Click this button to display information how to play Blackjack">
+             <i class="fa-solid fa-info"></i>
+         </button>
+
+         <!-- Modal box content -->
+         <div id="info" class="modal">
+             <div class="info-content">
+                 <span class="close" id="close">x</span>
+                 <h2>HOW TO PLAY BLACKJACK</h2>
+                 <p>OBJECTIVE: The Blackjack's game objective is to get a hand total scores of closer to 21 than the
+                     dealer without going over 21 (busting).</p>
+                 <p>CARD VALUES: Kings, queens, and jacks are worth 10 points. Numbered cards retain their face value.
+                     Aces are worth either 1 point or 11 points depending on what value advantages the player.</p>
+                 <p>HOW TO PLAY: If the dealer does not deal himself an ace as a face-up card, then player is asked if
+                     he/she would like to “hit” or “stand”. To hit is to ask for another card, to stand is to pass. If
+                     you choose to hit and then receive a card that puts you over the value of 21, you’ve busted. You
+                     may continue to hit until you are satisfied with your hand.</p>
+                 <p>A starting hand of a 10 valued card and an Ace is called a Blackjack and beats all hands other than
+                     another Blackjack. </p>
+                 <p>If both the player and dealer have Blackjack, the result is tie.</p>
+             </div>
+         </div>
 
     <!-- First game window -->
     <div id="welcome">
@@ -42,7 +67,9 @@
         </div>
 
     </div>
+    </main>
 
+    <script src="https://kit.fontawesome.com/9e7bc8c011.js" crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
 </body>
 
