@@ -10,6 +10,8 @@ let deck;
 let canHit = true; //allows the player to draw cards while scores <=21
 
 window.onload = function () {
+    let newGame = document.getElementById("new-game").addEventListener('click', loadGame);
+    loadGame();
     createCards();
     shuffleCards();
     startGame();
@@ -171,7 +173,39 @@ function stay() {
     //console.log("MSG dealer" + dealerScores);
     document.getElementById("player-scores").innerHTML = playerScores;
     //console.log("MSG player " + playerScores);
-
+    //set time interval to show user result before return to start game
+    setTimeout(hideGame, 5000);
 
 }
 
+//loads the playing field and hides first game window
+function loadGame() {
+    let content = document.getElementById("hide");
+    let gameWelcome = document.getElementById("welcome");
+
+    if (content.style.display !== "none") {
+        content.style.display = "none";
+        // gameWelcome.style.display = "block";
+    } else {
+
+        content.style.display = "block";
+        gameWelcome.setAttribute("id", "invisible");
+    }
+
+}
+
+
+//hides playing field and return first screen
+function hideGame() {
+    let showWelcome = document.getElementById("invisible");
+    let content = document.getElementById("hide");
+
+    if (content.style.display === "none") {
+
+        content.style.display = "block";
+    } else {
+        content.style.display = "none";
+        showWelcome.setAttribute("id", "welcome");
+        showWelcome.style.display = "block";
+    }
+}

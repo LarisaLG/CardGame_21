@@ -10,23 +10,35 @@
 </head>
 
 <body>
-    <div class="game-area">
+
+    <!-- First game window -->
+    <div id="welcome">
+        <h1 class="game-title">Black Jack</h1>
+        <img id="ace" src="img/2-cards.png" alt="two cards together a joker and an ace of spades">
+
+        <button id="new-game">Start Game!</button>
+    </div>
+
+    <!--     playing field     -->
+    <div id="hide" class="game-area">
         <!-- displays the number of Dealer's points on playing cards in the game  -->
         <h2>Dealer: <span id="dealer-scores"></span></h2>
         <!--  shows the playing cards obtained in the game -->
         <div id="dealer-cards">
-            <img id="hidden" src="img/back.png">
-            
+            <img id="hidden" src="img/back.png">  
         </div>
+
+         <p id="results"></p>
+
         <!-- displays the number of Player's points on playing cards in the game  -->
         <h2>You: <span id="player-scores"></span></h2>
         <!--  shows the Player's playing cards received in the game -->
         <div id="player-cards"></div>
+
         <!-- buttons for player interaction (to draw cards or stay)-->
         <div class="game-controls">
             <button id="hit">Hit me!</button>
             <button id="stay">Stay!</button>
-            <p id="results"></p>
         </div>
 
     </div>
