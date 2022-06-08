@@ -67,6 +67,61 @@ body {
     background: linear-gradient(to top, #f8831d, #f9c011);
 }
 
+/***  Modal box with with game rules  ***/
+/* Button for Modal box */
+.info-btn {
+    border: 3px double #f2c609;
+    background: #f56f06;
+    border-radius: 25px;
+    font-size: 1.5em;
+    color: #fbfcff;
+    padding: 6px;
+    width: 2em;
+    position: absolute;
+    right: 15%;
+}
+
+/* Modal box style */
+#info {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding: 50px 20px;
+    top: 0;
+    width: 75%;
+    height: 75%;
+    overflow: auto; /* Enable scroll if needed */
+    color: lightblue;
+    font-size: 1.2em;
+    background-color: rgba(3, 1, 28, 0.8);
+}
+
+.info-content {
+    text-align: left;
+    padding-left: 20px;
+    line-height: 1.8em;
+}
+
+/* Modal box Close Button */
+.close {
+    color: #d0cfec;
+    position: fixed;
+    right: 15%;
+    top: 2%;
+    font-size: 1.75em;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #f8831d;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+
 
 #dealer-cards img,
 #player-cards img {
