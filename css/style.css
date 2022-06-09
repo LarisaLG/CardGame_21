@@ -121,7 +121,7 @@ a:hover {
     right: 15%;
     top: 2%;
     font-size: 1.75em;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .close:hover,
@@ -172,7 +172,7 @@ h2 {
 #stay {
     width: 5em;
     height: 2.5em;
-    font-size: 1.5rem;
+    font-size: 1.5em;
     margin: 20px 5px 20px;
     color: #ffffff;
     text-shadow: 2px 2px 3px #272625;
@@ -273,7 +273,7 @@ h2 {
 
     #dealer-cards img,
     #player-cards img {
-        margin: -25px;
+        margin: -25px; /* show cards in 1 row */
     }
 
     #hit,
@@ -301,10 +301,11 @@ h2 {
     }
 
     #info {
-        width: 80%;
+        width: 90%;
         height: 100%;
         font-size: 16px;
         overflow: auto;
+        margin: 0 auto;
     }
 
     .info-content {
@@ -312,7 +313,7 @@ h2 {
     }
 
     .close {
-        right: 25%;
+        right: 10%;
     }
 
     /*** Game first screen ***/
@@ -326,18 +327,17 @@ h2 {
 
     /* first screen image*/
     #ace {
-        width: 10em;
-        height: 7em;
-        margin: 2em auto;
-        display: block;
+        width: 12em;
+        height: 9em;
     }
 
     /* button Start Game! */
     #new-game {
-        width: 8em;
+        width: 10em;
         height: 3em;
         font-size: 1em;
         font-weight: 700;
+        padding: 10px;
     }
 
     /***  Game area  ***/
