@@ -90,7 +90,7 @@ body {
     padding: 50px 20px;
     top: 0;
     width: 80%;
-    height: fit-content;
+    height: 75%;
     overflow: auto; /* Enable scroll if needed */
     color: lightblue;
     font-size: 1.2em;
@@ -122,13 +122,9 @@ body {
 
 /***  Game area  ***/
 .game-area {
-    /* background-color: #0e2978;  */
     width: 100%;
     margin: 20px auto;
     padding: 10px;
-    /* flex-flow: column; */
-    /* align-items: center; */
-    /* align-content: flex-end; */
 }
 
 #hide,
@@ -140,7 +136,6 @@ h2 {
     margin-bottom: 1em;
     text-shadow: 1px 1px 15px #f2c609;
     color: #f2c609;
-    /* background: #f56f06; */
 }
 
 #dealer-cards img,
@@ -183,4 +178,186 @@ h2 {
     color: #d0cfec;
     background: #f8831d;
     background: linear-gradient(to top, #f8831d, #f9c011);
+}
+
+
+/*  MEDIA QUERIES   */
+
+/* for screens that are 768px wide or less */
+@media screen and (max-width: 768px) and (min-width: 481px) {
+
+    /* Game wrapper  */
+    .container {
+        width: 100%;
+    }
+
+    /* Modal box style */
+    .info-btn {
+        right: 5%;
+    }
+
+    #info {
+        width: 98%;
+        padding: 50px 5px;
+    }
+
+    .close {
+        right: 10%;
+    }
+}
+
+
+/* for screens that are 480px wide or 376px */
+@media screen and (max-width: 480px) and (min-width: 375px) {
+
+    /* Game wrapper  */
+    .container {
+        width: 100%;
+    }
+
+    /* Modal box style */
+    .info-btn {
+        right: 5%;
+    }
+
+    #info {
+        width: 95%;
+    }
+
+    .info-content {
+        padding-left: 10px;
+    }
+
+    .close {
+        right: 5%;
+    }
+
+    /*** Game first screen ***/
+    #welcome {
+        width: 100%;
+    }
+
+    .game-title {
+        font-size: 2em;
+    }
+
+    /* first screen image*/
+    #ace {
+        width: 12em;
+        height: 9em;
+    }
+
+    /* button Start Game! */
+    #new-game {
+        width: 9em;
+        height: 3em;
+        font-size: 1.3em;
+        font-weight: 700;
+    }
+
+    /***  Game area  ***/
+    h2 {
+        margin-bottom: 2em;
+    }
+
+    #dealer-cards img,
+    #player-cards img {
+        margin: -25px;
+    }
+
+    #hit,
+    #stay {
+        margin-top: 50px;
+    }
+
+}
+
+
+/* for screens that are 375px wide or less */
+@media screen and (max-width: 375px) and (min-width: 320px) {
+
+    /* Game wrapper  */
+    .container {
+        width: 100%;
+    }
+
+    /* Modal box style */
+    .info-btn {
+        font-size: 1.1em;
+        color: #fbfcff;
+        padding: 4px;
+        right: 5%;
+    }
+
+    #info {
+        width: 80%;
+        height: 100%;
+        font-size: 16px;
+        overflow: auto;
+    }
+
+    .info-content {
+        padding-right: 5px;
+    }
+
+    .close {
+        right: 25%;
+    }
+
+    /*** Game first screen ***/
+    #welcome {
+        width: 100%;
+    }
+
+    .game-title {
+        font-size: 1.5em;
+    }
+
+    /* first screen image*/
+    #ace {
+        width: 10em;
+        height: 7em;
+        margin: 2em auto;
+        display: block;
+    }
+
+    /* button Start Game! */
+    #new-game {
+        width: 8em;
+        height: 3em;
+        font-size: 1em;
+        font-weight: 700;
+    }
+
+    /***  Game area  ***/
+    h2 {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+    }
+
+    #dealer-cards img,
+    #player-cards img {
+        height: 7em;
+        width: 5em;
+        margin: 1px -15px;
+    }
+
+    .results {
+        height: 1.8em;
+        margin-bottom: 3%;
+    }
+
+    #results {
+        font-size: 1.6em;
+
+    }
+
+    #hit,
+    #stay {
+        width: 5em;
+        height: 2.2em;
+        font-size: 1.1rem;
+        margin: 50px 5px;
+    }
+
 }
