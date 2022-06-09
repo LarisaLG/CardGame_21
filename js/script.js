@@ -10,13 +10,13 @@ let deck;
 let canHit = true; //allows the player to draw cards while scores <=21
 
 window.onload = function () {
-    let newGame = document.getElementById("new-game").addEventListener('click', loadGame);
+    document.getElementById("new-game").addEventListener('click', loadGame);
     loadGame();
     createCards();
     shuffleCards();
     startGame();
 
-}
+};
 
 // Looping through values and suits and creates array of 52 cards
 function createCards() {
@@ -38,7 +38,7 @@ function createCards() {
 //(https://www.w3schools.com/js/js_array_sort.asp)
 function shuffleCards() {
     deck = deck.sort(function() {
-        return 0.5 - Math.random()
+        return 0.5 - Math.random();
     });
     // console.log("After shuffle " + deck);
 }
@@ -197,17 +197,7 @@ function loadGame() {
 
 //hides playing field and return first screen
 function hideGame() {
-    let showWelcome = document.getElementById("invisible");
-    let content = document.getElementById("hide");
-
-    if (content.style.display === "none") {
-
-        content.style.display = "block";
-    } else {
-        content.style.display = "none";
-        showWelcome.setAttribute("id", "welcome");
-        showWelcome.style.display = "block";
-    }
+    window.location.reload();
 }
 
 // Get the modal box
@@ -222,16 +212,16 @@ let span = document.getElementById("close");
 // When the user clicks the button, open the modal 
 btn.onclick = function () {
     modal.style.display = "block";
-}
+};
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function () {
     modal.style.display = "none";
-}
+};
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
-}
+};
