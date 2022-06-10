@@ -60,7 +60,7 @@ function startGame() {
     let cardImg = document.createElement("img");
     //get source for img tag
     let card = deck.pop();
-    cardImg.src = "img/" + card + ".png";
+    cardImg.src = "assets/img/" + card + ".png";
     dealerScores += getValue(card);
     dealerAceCount += checkAce(card);
     document.getElementById("dealer-cards").append(cardImg);
@@ -72,7 +72,7 @@ function startGame() {
     //create img tag
     let cardImg = document.createElement("img");
     let card = deck.pop();
-    cardImg.src = "img/" + card + ".png";
+    cardImg.src = "assets/img/" + card + ".png";
     playerScores += getValue(card);
     playerAceCount += checkAce(card);
     document.getElementById("player-cards").append(cardImg);
@@ -124,7 +124,7 @@ function hit() {
     //create img tag
     let cardImg = document.createElement("img");
     let card = deck.pop();
-    cardImg.src = "img/" + card + ".png";
+    cardImg.src = "assets/img/" + card + ".png";
     playerScores += getValue(card);
     playerAceCount += checkAce(card);
     document.getElementById("player-cards").append(cardImg);
@@ -151,7 +151,7 @@ function stay() {
     playerScores = reduceAce(playerScores, playerAceCount);
 
     canHit = false;
-    document.getElementById("hidden").src = "img/" + hidden + ".png";
+    document.getElementById("hidden").src = "assets/img/" + hidden + ".png";
 
     let message = "";
     if (playerScores > 21) {

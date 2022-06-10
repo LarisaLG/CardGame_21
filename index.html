@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Card Game 21</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
@@ -42,7 +43,7 @@
     <!-- First game window -->
     <div id="welcome">
         <h1 class="game-title">Black Jack</h1>
-        <img id="ace" src="img/2-cards.png" alt="two cards together a joker and an ace of spades">
+        <img id="ace" src="assets/img/2-cards.png" alt="two cards together a joker and an ace of spades">
 
         <button id="new-game">Start Game!</button>
     </div>
@@ -53,13 +54,12 @@
         <h2>Dealer: <span id="dealer-scores"></span></h2>
         <!--  shows the playing cards obtained in the game -->
         <div id="dealer-cards">
-            <img id="hidden" src="img/back.png" alt="card deck">  
+            <img id="hidden" src="assets/img/back.png" alt="card deck">  
         </div>
-
+        <!--  displays message for user  -->
         <div class="results">
             <p id="results"></p>
         </div>
-
 
         <!-- displays the number of Player's points on playing cards in the game  -->
         <h2>You: <span id="player-scores"></span></h2>
@@ -71,12 +71,11 @@
             <button id="hit">Hit me!</button>
             <button id="stay">Stay!</button>
         </div>
-
     </div>
     </main>
 
     <script src="https://kit.fontawesome.com/9e7bc8c011.js" crossorigin="anonymous"></script>
-    <script src="js/script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>
