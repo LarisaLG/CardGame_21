@@ -9,6 +9,10 @@ let deck;
 
 let canHit = true; //allows the player to draw cards while scores <=21
 
+const DEALER_LIMIT = 17;
+const ACE = 11; // Ace is 11 points
+const IMAGE = 10; //all cards with image (J, Q, K) equals 10
+
 window.onload = function () {
     document.getElementById("new-game").addEventListener('click', loadGame);
     loadGame();
@@ -31,7 +35,6 @@ function createCards() {
             deck.push(values[v] + "-" + suits[s]);
         }
     }
-    //console.log(deck);
 }
 
 //shuffle the cards, sorting an Array in Random Order 
@@ -40,7 +43,6 @@ function shuffleCards() {
     deck = deck.sort(function() {
         return 0.5 - Math.random();
     });
-    // console.log("After shuffle " + deck);
 }
 
 //dealing the cards to computer and player
@@ -50,12 +52,9 @@ function startGame() {
     //get the value of the card and add it to the points
     dealerScores += getValue(hidden);
     dealerAceCount += checkAce(hidden);
-  
-    console.log(hidden);
-    console.log(dealerScores);
 
 // check if dealer's scores not exceed 17
-    while (dealerScores < 17) {
+    while (dealerScores < DEALER_LIMIT) {
     //create img tag
     let cardImg = document.createElement("img");
     //get source for img tag
@@ -65,7 +64,6 @@ function startGame() {
     dealerAceCount += checkAce(card);
     document.getElementById("dealer-cards").append(cardImg);
 }
-    console.log(dealerScores);
 
 //give first 2 cards for player
     for (let i = 0; i < 2; i++) {
@@ -76,30 +74,26 @@ function startGame() {
     playerScores += getValue(card);
     playerAceCount += checkAce(card);
     document.getElementById("player-cards").append(cardImg);
-
 }
-console.log(playerScores);
+
 //add an event listener to the button 'Hit me !' 
 document.getElementById("hit").addEventListener('click', hit);
 
 //add an event listener to the button 'Stay!' 
 document.getElementById("stay").addEventListener('click', stay);
-
 }
-
-
 
 //function checks if card contains digits or numbers and return card numeric value
 function getValue(card) {
-    let number = card.split("-"); // got array  from card 9-H => [9, H]
+    let number = card.split("-"); // got array from card 9-H => [9, H]
     let value = number[0];
     //check if card contains digits or numbers and return card value
     if (isNaN(value)) {
         if (value == "A") {
-            return 11;
+            return ACE;
         }
         //all cards with image (J, Q, K) equals 10, except Ace
-        return 10;
+        return IMAGE;
     }
     //if card value have digit returns its value
     return parseInt(value);
@@ -107,17 +101,12 @@ function getValue(card) {
 
 // check how many Aces are in hand
 function checkAce(row) {
-    if (row[0] === "A") {
-        return 1;
-    } else {
-        return 0;
-    }
+    row[0] === "A" ? 1 : 0;
 }
 
 //draw cards for the player
 function hit() {
     if (!canHit) {
-
         return;
     }
 
@@ -140,12 +129,11 @@ function reduceAce(playerScores, playerAceCount) {
     while (playerScores > 21 && playerAceCount > 0) {
         playerScores -= 10;
         playerAceCount -= 1;
-
     }
     return playerScores;
 }
 
-
+//function checks the Dealer and Player scores, outputs message for user, restarts the game
 function stay() {
     dealerScores = reduceAce(dealerScores, dealerAceCount);
     playerScores = reduceAce(playerScores, playerAceCount);
@@ -168,11 +156,9 @@ function stay() {
         message = "You Lose!";
     }
     document.getElementById('results').innerHTML = message;
-    //console.log("MSG " + message);
     document.getElementById("dealer-scores").innerHTML = dealerScores;
-    //console.log("MSG dealer" + dealerScores);
     document.getElementById("player-scores").innerHTML = playerScores;
-    //console.log("MSG player " + playerScores);
+
     //set time interval to show user result before return to start game
     setTimeout(hideGame, 5000);
 
