@@ -55,7 +55,7 @@ body {
     margin: 1.5rem 0.5rem;
     color: #fff;
     text-shadow: 2px 2px 3px #272625;
-    padding: 15px 20px;
+    padding: 15px 15px;
     box-shadow: 3px 3px 5px #1e1d1d;
     border-radius: 11px;
     border: 5px double #f2c609;
@@ -79,18 +79,22 @@ body {
     padding: 6px;
     width: 2em;
     position: absolute;
-    right: 10%;
+    top:5;
+    right: 5%;
 }
 
 /* Modal box style */
 #info {
     display: none;
-    position: fixed;
+    position: absolute;
     z-index: 1;
     padding: 50px 20px;
+    margin: auto;
     top: 0;
-    width: 80%;
-    height: 75%;
+    right: 0;
+    left: 0;
+    width: 90%;
+    height: 100%;
     overflow: auto; /* Enable scroll if needed */
     color: lightblue;
     font-size: 1.2em;
@@ -117,9 +121,9 @@ a:hover {
 /* Modal box Close Button */
 .close {
     color: #d0cfec;
-    position: fixed;
-    right: 15%;
-    top: 2%;
+    position: absolute;
+    right:3%;
+    top: 3%;
     font-size: 1.75em;
     font-weight: 700;
 }
@@ -208,12 +212,13 @@ h2 {
     }
 
     #info {
-        width: 98%;
-        padding: 50px 5px;
+        width: 90%;
+        padding: 50px 15px;
     }
 
     .close {
-        right: 10%;
+        top:2%;
+        right: 5%;
     }
 }
 
@@ -310,6 +315,7 @@ h2 {
 
     .info-content {
         padding-right: 5px;
+        padding-left: 5px;
     }
 
     .close {
