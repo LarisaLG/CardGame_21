@@ -8,13 +8,19 @@ let hidden;
 let deck;
 
 let canHit = true; //allows the player to draw cards while scores <=21
+let newGame = document.getElementById("new-game");
 
+const dealerCards = document.getElementById("dealer-cards");
+const playerCards = document.getElementById("player-cards");
+
+const btnHit = document.getElementById("hit");
+const btnStay = document.getElementById("stay");
 const DEALER_LIMIT = 17;
 const ACE = 11; // Ace is 11 points
 const IMAGE = 10; //all cards with image (J, Q, K) equals 10
 
 window.onload = function () {
-    document.getElementById("new-game").addEventListener('click', loadGame);
+    newGame.addEventListener('click', loadGame);
     loadGame();
     createCards();
     shuffleCards();
@@ -30,11 +36,11 @@ function createCards() {
 
     //looping through card suits and values to create an array of 52 cards
     //C for Clubs, D - diamonds, H - Hearts, S - Spades
-    for (let s = 0; s < suits.length; s++) {
-        for (let v = 0; v < values.length; v++) {
-            deck.push(values[v] + "-" + suits[s]);
-        }
-    }
+    for (let suit in suits) {
+        for (let value in values) {
+            deck.push(values[value] + "-" + suits[suit]);
+       }
+   }
 }
 
 //shuffle the cards, sorting an Array in Random Order 
@@ -62,7 +68,7 @@ function startGame() {
     cardImg.src = "assets/img/" + card + ".png";
     dealerScores += getValue(card);
     dealerAceCount += checkAce(card);
-    document.getElementById("dealer-cards").append(cardImg);
+    dealerCards.append(cardImg);
 }
 
 //give first 2 cards for player
@@ -73,14 +79,14 @@ function startGame() {
     cardImg.src = "assets/img/" + card + ".png";
     playerScores += getValue(card);
     playerAceCount += checkAce(card);
-    document.getElementById("player-cards").append(cardImg);
+    playerCards.append(cardImg);
 }
 
 //add an event listener to the button 'Hit me !' 
-document.getElementById("hit").addEventListener('click', hit);
+btnHit.addEventListener('click', hit);
 
 //add an event listener to the button 'Stay!' 
-document.getElementById("stay").addEventListener('click', stay);
+btnStay.addEventListener('click', stay);
 }
 
 //function checks if card contains digits or numbers and return card numeric value
@@ -116,7 +122,7 @@ function hit() {
     cardImg.src = "assets/img/" + card + ".png";
     playerScores += getValue(card);
     playerAceCount += checkAce(card);
-    document.getElementById("player-cards").append(cardImg);
+    playerCards.append(cardImg);
 
     //checks if scores sum is >21 and stops to draw cards
     if (reduceAce(playerScores, playerAceCount) > 21) {
@@ -133,6 +139,8 @@ function reduceAce(playerScores, playerAceCount) {
     return playerScores;
 }
 
+//* This function is sourced from Kenny Yip Coding's video tutorial 
+// "Code Blackjack with JavaScript HTML CSS"](https://youtu.be/bMYCWccL-3U
 //function checks the Dealer and Player scores, outputs message for user, restarts the game
 function stay() {
     dealerScores = reduceAce(dealerScores, dealerAceCount);
@@ -160,7 +168,7 @@ function stay() {
     document.getElementById("player-scores").innerHTML = playerScores;
 
     //set time interval to show user result before return to start game
-    setTimeout(hideGame, 5000);
+    setTimeout(hideGame, 3000);
 
 }
 

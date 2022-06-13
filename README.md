@@ -279,3 +279,60 @@ To test the performance and availability of the deployed site, a Lighthouse repo
 
 [Back to top](#table-of-contents)
 
+ 
+
+## Deployment
+
+### GitHub Pages
+
+The site was deployed to GitHub pages using the following procedure:
+
+Go to the settings tab in GitHub.
+
+Scroll down and find the GitHub Pages option in settings. And select a main branch or any other branch that you would like to publish and host online.
+
+Click "Save" button and wait for a while...
+
+The page will update and show: "Your site is ready to be published at ``https://username.github.io/repository-name/``"
+
+
+### Making a Local Clone
+1. Log in to GitHub and locate the GitHub Repository
+2. Under the repository name choose button "Code",  click "Clone or download".
+3. To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
+4. Open your development editor of choice and open a terminal window in a directory of your choice
+5. Type *git clone*, and then paste the URL you copied in Step 3.
+
+``> git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY``
+
+Press Enter. 
+
+Your local clone will be created.
+
+For more information follow this [link](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository#cloning-a-repository-to-github-desktop).
+
+
+[Back to the top](#table-of-contents)
+
+## Credits
+
+###  Resources used in the process of project development:
+
+Card images sources:  [Google Code](https://code.google.com/archive/p/vector-playing-cards/) and [kindpng.com](https://www.kindpng.com/)<br>
+
+
+Tutorial [Web Dev Simplified "How To Build A Simple Card Game With JavaScript"](https://youtu.be/NxRwIZWjLtE)<br>
+Tutorial [Kenny Yip Coding "Code Blackjack with JavaScript HTML CSS"](https://youtu.be/bMYCWccL-3U) was used as the main code source for this project<br>
+[W3schools.com](https://www.w3schools.com/js/js_array_sort.asp) became the source of a function to shuffle a set of cards, sorting an array of cards in random order<br>
+[Stack Overflow](href="https://stackoverflow.com/")<br>
+[MDN Web Docks]("https://developer.mozilla.org/en-US/")<br>
+
+[Back to the top](#table-of-contents)
+
+### Acknowledgements
+
+Thanks to my mentor Martina Terlevic for her support and guidance, and tutor Kasya Bogucka for timely provision of information sources, hints during the development of the project.
+Also thanks to the Slack Community and to Tutor Support for the quick and helpful help with the project
+
+
+[Back to the top](#table-of-contents)

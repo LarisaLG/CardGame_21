@@ -169,7 +169,22 @@ h2 {
     font-size: 2em;
     text-shadow: 2px 3px 5px red;
     margin: 1em 0;
+    animation: resultAnim 2s ease 0s 5 normal;
 }
+
+@keyframes resultAnim {
+    0%,
+    50%,
+    100% {
+        opacity: 1;
+    }
+    25%,
+    75% {
+        opacity: 0;
+    }
+}
+
+
 
 /* buttons on the playing field */
 #hit,
