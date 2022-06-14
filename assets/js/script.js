@@ -51,6 +51,8 @@ function shuffleCards() {
     });
 }
 
+//* This function is sourced from Kenny Yip Coding's video tutorial 
+// "Code Blackjack with JavaScript HTML CSS"](https://youtu.be/bMYCWccL-3U
 //dealing the cards to computer and player
 function startGame() {
     //get card from end of card array
@@ -110,6 +112,8 @@ function checkAce(row) {
     row[0] === "A" ? 1 : 0;
 }
 
+//* This function is sourced from Kenny Yip Coding's video tutorial 
+// "Code Blackjack with JavaScript HTML CSS"](https://youtu.be/bMYCWccL-3U
 //draw cards for the player
 function hit() {
     if (!canHit) {
